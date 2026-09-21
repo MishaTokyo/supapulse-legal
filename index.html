@@ -3,154 +3,112 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SupaPulse — Legal &amp; Privacy</title>
-  <meta name="description" content="How SupaPulse works, privacy policy, and how to revoke access. We never store your Supabase keys in our database." />
+  <title>Legal — SupaPulse</title>
+  <meta name="description" content="How SupaPulse works, privacy, and how to revoke access. We never store your Supabase keys in our database." />
   <link rel="icon" href="./favicon.png" />
   <link rel="apple-touch-icon" href="./icon.png" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=2" />
 </head>
 <body>
-  <div class="dots" aria-hidden="true"></div>
-  <div class="page">
-    <header class="nav">
-      <div class="nav-inner">
-        <a class="brand" href="./">
-          <img src="./icon.png" alt="" width="28" height="28" />
-          SupaPulse
-        </a>
-        <nav class="nav-links">
-          <a class="active" href="./">Legal</a>
-          <a href="./privacy.html">Privacy</a>
-          <a href="./terms.html">Terms</a>
-          <a href="./#delete">Delete access</a>
-        </nav>
-      </div>
-    </header>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="./">
+        <img src="./icon.png" alt="" width="22" height="22" />
+        SupaPulse
+      </a>
+      <nav>
+        <a class="active" href="./">Legal</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-      <div class="dots" aria-hidden="true"></div>
-      <div class="wrap">
-        <svg class="pulse" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-          <path d="M6 44 H24 L32 44 L42 16 L54 72 L64 44 H82" stroke="rgba(8,32,21,0.42)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <h1>SupaPulse</h1>
-        <p class="tagline">Your Supabase org, in your pocket.</p>
-        <p class="modules">Usage &nbsp;·&nbsp; Tables &nbsp;·&nbsp; Auth &nbsp;·&nbsp; Storage &nbsp;·&nbsp; Edge</p>
-        <div class="hero-actions">
-          <a class="btn btn-white" href="./privacy.html">Privacy Policy</a>
-          <a class="btn btn-dark" href="./terms.html">Terms of Use</a>
-          <a class="btn btn-ghost" href="./#delete">How to delete</a>
-        </div>
-      </div>
-    </section>
+  <main>
+    <div class="wrap">
+      <h1>Legal</h1>
+      <p class="meta">Effective 21 September 2026</p>
 
-    <main class="main">
-      <div class="wrap">
-        <p class="updated">Effective 21 September 2026 · App Store legal pages for Apple review</p>
-        <p class="lead">
-          SupaPulse is an unofficial third-party companion for your own Supabase organization.
-          It is not affiliated with or endorsed by Supabase Inc. These pages explain how the app
-          works, what we store, and how you remove access.
-        </p>
+      <p>
+        SupaPulse is an unofficial third-party companion for your own Supabase organization.
+        It is not affiliated with or endorsed by Supabase Inc. These pages describe how the app
+        works, what we store, and how you remove access.
+      </p>
 
-        <h2>How the app works</h2>
-        <div class="grid">
-          <article class="card">
-            <div class="kicker">1. Sign in</div>
-            <h3>Google, GitHub, or a token</h3>
-            <p>Continue with Google or GitHub opens supabase.com so you can authorize your org. You can also paste a personal access token (<span class="mono">sbp_…</span>) from Account → Access Tokens.</p>
-          </article>
-          <article class="card">
-            <div class="kicker">2. Your projects</div>
-            <h3>Pulse of the workspace</h3>
-            <p>The app lists organizations and projects, then shows usage, SQL, tables, Auth users, Storage, and Edge Functions on the project you pick.</p>
-          </article>
-          <article class="card">
-            <div class="kicker">3. Your API</div>
-            <h3>Talks to your Supabase</h3>
-            <p>Queries and Management API calls run against <em>your</em> projects with <em>your</em> credential. We never ask for a <span class="mono">service_role</span> key.</p>
-          </article>
-        </div>
+      <h2>How the app works</h2>
+      <p>
+        You sign in with Google or GitHub on supabase.com, which authorizes your organization,
+        or you paste a personal access token (<code>sbp_…</code>) from Account → Access Tokens.
+        The app then lists your projects and lets you inspect usage, run SQL, and work with
+        tables, Auth users, Storage, and Edge Functions on the project you select.
+      </p>
+      <p>
+        API calls run against your projects with your credential. We never ask for a
+        <code>service_role</code> key. The app rejects those if you try to paste them.
+      </p>
 
-        <div class="notice">
-          <p>
-            <strong>We do not keep your keys in our database.</strong>
-            Personal access tokens and OAuth access tokens stay on the device
-            (iOS Keychain / Android Keystore). Our backend may see a token only
-            in memory while completing sign-in or proxying a request. It is not
-            written to tables, logs we retain, or backups of user data.
-          </p>
-        </div>
+      <h2>Where data lives</h2>
+      <p>
+        We do not store API keys, personal access tokens, OAuth access tokens, refresh tokens,
+        or service role keys in our database. Those secrets stay on the device (iOS Keychain or
+        Android Keystore). Our backend may see a token only in memory while completing sign-in
+        or proxying a request. It is not written to tables or retained in logs.
+      </p>
+      <p>
+        On the device we keep the management token, optional refresh token, saved SQL snippets,
+        alert preferences, and a short project list cache. Sign out deletes this from the device.
+      </p>
+      <p>
+        On our backend we may store a user-count record: an email or display label if Supabase
+        returns one, the sign-in method, organization name, and timestamps. Never a token.
+        The credential itself lives in your Supabase account. Delete it there and the app
+        immediately loses access to your projects.
+      </p>
 
-        <h2>What lives where</h2>
-        <div class="grid">
-          <article class="card">
-            <div class="kicker">On your phone</div>
-            <h3>Secrets stay local</h3>
-            <p>Management token, optional refresh token, saved SQL snippets, alert prefs, and a cached project list. Sign out wipes this device.</p>
-          </article>
-          <article class="card">
-            <div class="kicker">On our backend</div>
-            <h3>No keys, ever</h3>
-            <p>We may store a user record with email or a display label, auth method, and org name so we can count people who open the app. Never a PAT, refresh token, or service role key.</p>
-          </article>
-          <article class="card">
-            <div class="kicker">On your Supabase</div>
-            <h3>You own the credential</h3>
-            <p>The token or OAuth grant lives in <em>your</em> Supabase account. Delete it there and the app immediately loses access to your projects.</p>
-          </article>
-        </div>
+      <h2 id="delete">How to delete access</h2>
+      <p>
+        Because we do not keep your keys, the way to cut access is to revoke the credential
+        in your own Supabase dashboard.
+      </p>
+      <ol>
+        <li>
+          Open
+          <a href="https://supabase.com/dashboard/account/tokens" rel="noopener">supabase.com → Account → Access Tokens</a>.
+        </li>
+        <li>
+          Delete the personal access token you created for SupaPulse, or any token you pasted
+          into the app. That is enough for that key.
+        </li>
+        <li>
+          If you signed in with Google or GitHub, open your organization on supabase.com,
+          go to OAuth Apps, and revoke SupaPulse.
+        </li>
+        <li>
+          In the app, open Settings → Sign out. That deletes the token, snippets, and identity
+          from this device.
+        </li>
+        <li>Uninstall the app if you want it removed from the phone.</li>
+      </ol>
+      <p>
+        There is no key vault on our side to erase. If you also want the optional user-count
+        row removed, open an issue on
+        <a href="https://github.com/MishaTokyo/supapulse-legal/issues">this repository</a>
+        with the email you use on supabase.com.
+      </p>
 
-        <h2 id="delete">How to delete access</h2>
-        <p>Apple asks us to explain account and data deletion. Because keys are not stored in our database, the reliable way to cut access is to revoke the credential in your own Supabase dashboard.</p>
-        <ol class="steps">
-          <li>
-            Open <a href="https://supabase.com/dashboard/account/tokens" rel="noopener">supabase.com → Account → Access Tokens</a>.
-          </li>
-          <li>
-            Find the personal access token you created for SupaPulse (or any token you pasted into the app) and delete it. That is enough. The app can no longer call your projects with that key.
-          </li>
-          <li>
-            If you signed in with Google or GitHub, also open your organization on supabase.com, go to OAuth Apps / authorized applications, and revoke <strong>SupaPulse</strong>.
-          </li>
-          <li>
-            In the app, open <strong>Settings → Sign out</strong>. That deletes the token, snippets, and identity from this device.
-          </li>
-          <li>
-            Uninstall SupaPulse if you want the app gone from the phone.
-          </li>
-        </ol>
-        <p>
-          There is nothing extra you need us to “erase from our key vault,” because we do not have one.
-          If you also want the optional user-count row (email / display label) removed from our
-          <span class="mono">app_users</span> table, open an issue on
-          <a href="https://github.com/MishaTokyo/supapulse-legal/issues">this legal repo</a>
-          with the email you used on supabase.com.
-        </p>
+      <h2>Documents</h2>
+      <p>
+        <a href="./privacy.html">Privacy Policy</a><br />
+        <a href="./terms.html">Terms of Use</a>
+      </p>
+    </div>
+  </main>
 
-        <hr />
-
-        <h2>For App Store Connect</h2>
-        <p>Use these public URLs:</p>
-        <div class="pill-row">
-          <span class="pill">Privacy Policy → privacy.html</span>
-          <span class="pill">Terms of Use → terms.html</span>
-          <span class="pill">This page → index.html</span>
-        </div>
-        <p style="margin-top: 18px">
-          After GitHub Pages is on, they will be:<br />
-          <a href="https://mishatokyo.github.io/supapulse-legal/privacy.html">https://mishatokyo.github.io/supapulse-legal/privacy.html</a><br />
-          <a href="https://mishatokyo.github.io/supapulse-legal/terms.html">https://mishatokyo.github.io/supapulse-legal/terms.html</a>
-        </p>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="wrap">
-        <span>Unofficial third-party client for Supabase. Not affiliated with or endorsed by Supabase Inc.</span>
-        <span>© 2026 SupaPulse · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a></span>
-      </div>
-    </footer>
-  </div>
+  <footer>
+    <div class="wrap">
+      <p>Unofficial third-party client for Supabase. Not affiliated with or endorsed by Supabase Inc.</p>
+      <p>© 2026 SupaPulse</p>
+    </div>
+  </footer>
 </body>
 </html>
