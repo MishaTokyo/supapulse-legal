@@ -1,114 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Legal — SupaPulse</title>
-  <meta name="description" content="How SupaPulse works, privacy, and how to revoke access. We never store your Supabase keys in our database." />
-  <link rel="icon" href="./favicon.png" />
-  <link rel="apple-touch-icon" href="./icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=2" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SupaPulse — Supabase monitoring on your iPhone</title>
+  <meta name="description" content="Watch your Supabase projects from your iPhone. Push alerts for downtime, errors, CPU, RAM, disk, or your own SQL — even when the app is closed.">
+  <meta name="theme-color" content="#0b0f0d">
+  <meta property="og:title" content="SupaPulse — Supabase monitoring on your iPhone">
+  <meta property="og:description" content="Push alerts for downtime, errors, CPU, disk, or your own SQL. No tracking.">
+  <meta property="og:image" content="img/1-dashboard.png">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <a class="brand" href="./">
-        <img src="./icon.png" alt="" width="22" height="22" />
-        SupaPulse
-      </a>
-      <nav>
-        <a class="active" href="./">Legal</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
-      </nav>
-    </div>
+  <header class="nav">
+    <a class="brand" href="./"><img src="img/icon.png" alt="" width="28" height="28"> SupaPulse</a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+    </nav>
   </header>
 
   <main>
-    <div class="wrap">
-      <h1>Legal</h1>
-      <p class="meta">Effective 21 September 2026</p>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">For developers who ship on Supabase</p>
+        <h1>Know when your Supabase project breaks. Before your users do.</h1>
+        <p class="lead">SupaPulse watches your projects every 5 minutes and sends a push when something is wrong — even when the app is closed.</p>
+        <div class="cta">
+          <a class="button" href="https://apps.apple.com/app/id6811562027">Download on the App Store</a>
+          <span class="note">iPhone · One-time purchase · No tracking</span>
+        </div>
+      </div>
+      <div class="hero-shot">
+        <img src="img/3-alerts.png" alt="SupaPulse alert settings on iPhone" width="660" height="1434">
+      </div>
+    </section>
 
-      <p>
-        SupaPulse is an unofficial third-party companion for your own Supabase organization.
-        It is not affiliated with or endorsed by Supabase Inc. These pages describe how the app
-        works, what we store, and how you remove access.
-      </p>
+    <section id="features" class="features">
+      <article>
+        <h2>Alerts that matter</h2>
+        <p>A project goes down or gets paused. Errors spike in the API, auth, storage, Postgres, or functions. CPU, RAM, or disk crosses your limit. Or any read-only SQL check you write.</p>
+      </article>
+      <article>
+        <h2>Works with the app closed</h2>
+        <p>Connect with Supabase sign-in and our server checks up to five projects every 5 minutes. Quiet hours and repeat limits keep it calm at night.</p>
+      </article>
+      <article>
+        <h2>Your whole org in your pocket</h2>
+        <p>Status, compute, quotas, traffic by service, tables, auth users, storage buckets, edge functions, and a SQL editor that defaults to read-only.</p>
+      </article>
+      <article>
+        <h2>Private by design</h2>
+        <p>No ads, no analytics, no tracking. Access tokens stay in the iOS Keychain. Server-side sessions are encrypted with AES-256-GCM. Delete your account in one tap.</p>
+      </article>
+    </section>
 
-      <h2>How the app works</h2>
-      <p>
-        You sign in with Google or GitHub on supabase.com, which authorizes your organization,
-        or you paste a personal access token (<code>sbp_…</code>) from Account → Access Tokens.
-        The app then lists your projects and lets you inspect usage, run SQL, and work with
-        tables, Auth users, Storage, and Edge Functions on the project you select.
-      </p>
-      <p>
-        API calls run against your projects with your credential. We never ask for a
-        <code>service_role</code> key. The app rejects those if you try to paste them.
-      </p>
+    <section class="gallery" aria-label="Screenshots">
+      <img src="img/1-dashboard.png" alt="Project dashboard" loading="lazy" width="330" height="717">
+      <img src="img/2-activity.png" alt="Traffic and errors by service" loading="lazy" width="330" height="717">
+      <img src="img/5-history.png" alt="Alert history" loading="lazy" width="330" height="717">
+      <img src="img/6-tables.png" alt="Tables" loading="lazy" width="330" height="717">
+    </section>
 
-      <h2>Where data lives</h2>
-      <p>
-        We do not store API keys, personal access tokens, OAuth access tokens, refresh tokens,
-        or service role keys in our database. Those secrets stay on the device (iOS Keychain or
-        Android Keystore). Our backend may see a token only in memory while completing sign-in
-        or proxying a request. It is not written to tables or retained in logs.
-      </p>
-      <p>
-        On the device we keep the management token, optional refresh token, saved SQL snippets,
-        alert preferences, and a short project list cache. Sign out deletes this from the device.
-      </p>
-      <p>
-        On our backend we may store a user-count record: an email or display label if Supabase
-        returns one, the sign-in method, organization name, and timestamps. Never a token.
-        The credential itself lives in your Supabase account. Delete it there and the app
-        immediately loses access to your projects.
-      </p>
-
-      <h2 id="delete">How to delete access</h2>
-      <p>
-        Because we do not keep your keys, the way to cut access is to revoke the credential
-        in your own Supabase dashboard.
-      </p>
-      <ol>
-        <li>
-          Open
-          <a href="https://supabase.com/dashboard/account/tokens" rel="noopener">supabase.com → Account → Access Tokens</a>.
-        </li>
-        <li>
-          Delete the personal access token you created for SupaPulse, or any token you pasted
-          into the app. That is enough for that key.
-        </li>
-        <li>
-          If you signed in with Google or GitHub, open your organization on supabase.com,
-          go to OAuth Apps, and revoke SupaPulse.
-        </li>
-        <li>
-          In the app, open Settings → Sign out. That deletes the token, snippets, and identity
-          from this device.
-        </li>
-        <li>Uninstall the app if you want it removed from the phone.</li>
-      </ol>
-      <p>
-        There is no key vault on our side to erase. If you also want the optional user-count
-        row removed, open an issue on
-        <a href="https://github.com/MishaTokyo/supapulse-legal/issues">this repository</a>
-        with the email you use on supabase.com.
-      </p>
-
-      <h2>Documents</h2>
-      <p>
-        <a href="./privacy.html">Privacy Policy</a><br />
-        <a href="./terms.html">Terms of Use</a>
-      </p>
-    </div>
+    <section class="faq">
+      <h2>Questions</h2>
+      <details>
+        <summary>Do I have to give SupaPulse my password?</summary>
+        <p>No. You sign in on supabase.com and authorize SupaPulse for one organization. You can revoke it any time in your Supabase organization settings.</p>
+      </details>
+      <details>
+        <summary>Can I use a personal access token instead?</summary>
+        <p>Yes. It stays in the iOS Keychain and is never saved on our server, so alerts then only fire while the app is open.</p>
+      </details>
+      <details>
+        <summary>Is SupaPulse made by Supabase?</summary>
+        <p>No. SupaPulse is an independent third-party app and is not affiliated with or endorsed by Supabase Inc.</p>
+      </details>
+      <details>
+        <summary>Can I try it first?</summary>
+        <p>Yes. Open the app and tap “Explore the demo” to see every screen with sample data.</p>
+      </details>
+    </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <p>Unofficial third-party client for Supabase. Not affiliated with or endorsed by Supabase Inc.</p>
-      <p>© 2026 SupaPulse</p>
-    </div>
+    <p>© 2026 SupaPulse · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p>
+    <p class="fine">Supabase is a trademark of Supabase Inc. SupaPulse is not affiliated with Supabase Inc. This site uses no cookies.</p>
   </footer>
 </body>
 </html>

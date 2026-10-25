@@ -1,120 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms of Use — SupaPulse</title>
-  <meta name="description" content="Terms of use for SupaPulse, an unofficial companion app for your Supabase organization." />
-  <link rel="icon" href="./favicon.png" />
-  <link rel="apple-touch-icon" href="./icon.png" />
-  <link rel="stylesheet" href="./styles.css?v=2" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SupaPulse Terms of Use</title>
+  <meta name="description" content="Terms of Use for the SupaPulse iPhone app.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <a class="brand" href="./">
-        <img src="./icon.png" alt="" width="22" height="22" />
-        SupaPulse
-      </a>
-      <nav>
-        <a href="./">Legal</a>
-        <a href="./privacy.html">Privacy</a>
-        <a class="active" href="./terms.html">Terms</a>
-      </nav>
-    </div>
+  <header class="nav">
+    <a class="brand" href="./"><img src="img/icon.png" alt="" width="28" height="28"> SupaPulse</a>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+    </nav>
   </header>
+  <main class="doc">
+    <h1>Terms of Use</h1>
+    <p>Effective 21 September 2026 · Updated 26 October 2026</p>
+    <p>These terms govern your use of the SupaPulse app. If you do not agree, do not use the app.</p>
 
-  <main>
-    <div class="wrap">
-      <h1>Terms of Use</h1>
-      <p class="meta">Effective 21 September 2026 · Last updated 21 September 2026</p>
+    <h2>1. The product</h2>
+    <p>SupaPulse is an unofficial third-party app for watching and operating your Supabase organization from your iPhone: project health, usage, alerts, SQL, tables, Auth, Storage, and Edge Functions. It is not affiliated with, sponsored by, or endorsed by Supabase Inc. “Supabase” is a trademark of its owner and is used only to describe compatibility.</p>
 
-      <p>
-        These terms govern your use of the SupaPulse mobile and web app. If you do not agree,
-        do not use the app.
-      </p>
+    <h2>2. Your account and access</h2>
+    <ul>
+      <li>You connect with access you control: “Connect with Supabase” (OAuth on supabase.com) or a personal access token you create in your Supabase account.</li>
+      <li>Do not paste a service_role key or project API key into the app. The app is designed to reject them.</li>
+      <li>You are responsible for the access you grant and for every SQL statement or data change you run.</li>
+      <li>Personal access tokens stay on your device. If you use Supabase sign-in with background alerts, we keep your Supabase session on our server, encrypted, only to check your alert rules. See the <a href="privacy.html">Privacy Policy</a>.</li>
+    </ul>
 
-      <h2>1. The product</h2>
-      <p>
-        SupaPulse is an unofficial third-party companion for viewing and operating your
-        Supabase organization from a phone or browser: project health, usage, SQL, tables,
-        Auth, Storage, and Edge Functions. It is not affiliated with, sponsored by, or
-        endorsed by Supabase Inc. “Supabase” is a trademark of its owner. We use the name
-        only to describe compatibility.
-      </p>
+    <h2>3. Alerts</h2>
+    <p>Alerts are best effort. Checks run about every 5 minutes and depend on Supabase, Expo, and Apple push services. Do not rely on SupaPulse as your only monitoring for critical systems.</p>
 
-      <h2>2. Your account and keys</h2>
-      <p>
-        You connect with a credential you control: a Supabase platform OAuth grant (Google
-        or GitHub on supabase.com) or a personal access token you create under Account →
-        Access Tokens.
-      </p>
-      <ul>
-        <li>Do not paste a <code>service_role</code> key into the app. The app is designed to reject that.</li>
-        <li>You are responsible for the scopes you grant and for every SQL statement or data change you run.</li>
-        <li>We do not store your keys in our database. They remain on the device. See the <a href="./privacy.html">Privacy Policy</a>.</li>
-      </ul>
+    <h2>4. Acceptable use</h2>
+    <p>Use SupaPulse only on organizations and projects you are allowed to access. Do not use it to attack, scrape, or disrupt systems you do not own, share someone else’s credentials, or get around rate limits or security controls of Supabase or the app.</p>
 
-      <h2>3. Acceptable use</h2>
-      <p>You may use SupaPulse only on organizations and projects you are allowed to access. You must not:</p>
-      <ul>
-        <li>use the app to attack, scrape, or disrupt systems you do not own;</li>
-        <li>share someone else’s token;</li>
-        <li>circumvent rate limits or security controls on Supabase or the app.</li>
-      </ul>
+    <h2>5. No warranty</h2>
+    <p>The app is provided “as is.” We do not promise that metrics, alerts, SQL results, or project status will be complete, timely, or error-free. Destructive queries can change or delete data in your project. Confirm those actions yourself and keep backups.</p>
 
-      <h2>4. No warranty</h2>
-      <p>
-        The app is provided “as is.” We do not warrant that SQL, metrics, or project status
-        will be complete, uninterrupted, or error-free. Destructive queries can change or
-        delete data in your project. Confirm those actions yourself. Keep backups on Supabase.
-      </p>
+    <h2>6. Limitation of liability</h2>
+    <p>To the maximum extent the law allows, the developer of SupaPulse is not liable for lost data, lost profits, missed alerts, or other damages from using the app, including queries you run against your database. Where such limits are not allowed, our liability is limited to the amount you paid for the app in the last twelve months.</p>
 
-      <h2>5. Limitation of liability</h2>
-      <p>
-        To the maximum extent permitted by law, the developer of SupaPulse is not liable for
-        lost data, lost profits, or other damages arising from use of the app, including
-        queries you run against your database. Some jurisdictions do not allow certain
-        limitations; in those places, our liability is limited to the amount you paid for
-        the app (if any) in the last twelve months.
-      </p>
+    <h2>7. Apple</h2>
+    <p>If you got the app from the App Store, these terms are between you and the developer of SupaPulse, not Apple. Apple has no obligation to provide maintenance or support and is not responsible for product claims, legal or regulatory requirements, or third-party IP claims related to the app. Apple and its subsidiaries are third-party beneficiaries of these terms and may enforce them. You confirm that you are not in a U.S.-embargoed country and not on a U.S. government list of prohibited parties.</p>
 
-      <h2>6. Apple-required terms</h2>
-      <p>
-        If you download the app from the App Store, you acknowledge that these terms are
-        between you and the developer of SupaPulse, not Apple. Apple has no obligation to
-        provide maintenance or support. Apple is not responsible for product claims, legal
-        or regulatory requirements, or third-party IP claims related to the app. Apple and
-        its subsidiaries are third-party beneficiaries of these terms and may enforce them.
-        You represent that you are not in a U.S. embargoed country and are not on a U.S.
-        government prohibited-party list.
-      </p>
+    <h2>8. Ending use</h2>
+    <p>You can stop at any time: Settings → Delete account, revoke SupaPulse in your Supabase organization settings, and uninstall. We may stop offering the app.</p>
 
-      <h2>7. Ending use</h2>
-      <p>
-        You can stop at any time: delete the token in your Supabase dashboard, revoke the
-        OAuth app, sign out in Settings, and uninstall. We may stop offering the app without
-        notice. See <a href="./#delete">how to delete access</a>.
-      </p>
+    <h2>9. Changes</h2>
+    <p>We may update these terms and will change the date above. Continuing to use the app means you accept the update.</p>
 
-      <h2>8. Changes</h2>
-      <p>
-        We may update these terms. The date at the top will change. Continued use means you
-        accept the updated terms.
-      </p>
-
-      <h2>9. Contact</h2>
-      <p>
-        <a href="https://github.com/MishaTokyo/supapulse-legal/issues">github.com/MishaTokyo/supapulse-legal/issues</a>
-      </p>
-    </div>
+    <h2>10. Contact</h2>
+    <p><a href="mailto:mikesot7@gmail.com">mikesot7@gmail.com</a></p>
   </main>
-
   <footer>
-    <div class="wrap">
-      <p>Unofficial third-party client for Supabase. Not affiliated with or endorsed by Supabase Inc.</p>
-      <p>© 2026 SupaPulse</p>
-    </div>
+    <p>© 2026 SupaPulse · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="./">Home</a></p>
+    <p class="fine">SupaPulse is not affiliated with Supabase Inc. This site uses no cookies.</p>
   </footer>
 </body>
 </html>

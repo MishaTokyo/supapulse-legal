@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SupaPulse Support</title>
+  <meta name="description" content="Help with SupaPulse: sign-in, alerts, notifications, and account deletion.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="./"><img src="img/icon.png" alt="" width="28" height="28"> SupaPulse</a>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+  <main class="doc">
+    <h1>Support</h1>
+    <p>Write to <a href="mailto:mikesot7@gmail.com">mikesot7@gmail.com</a>. We answer within two business days.</p>
+
+    <h2>Alerts do not arrive while the app is closed</h2>
+    <ul>
+      <li>Open Settings → Alerts in SupaPulse. The status card tells you whether background delivery is on and what to do if it is not.</li>
+      <li>Background alerts need “Connect with Supabase” sign-in. With a personal access token, alerts only fire while the app is open.</li>
+      <li>Check iOS Settings → Notifications → SupaPulse, and that quiet hours are not on.</li>
+      <li>Tap “Send a test alert”. If it arrives, real alerts will too.</li>
+    </ul>
+
+    <h2>Sign-in fails or loops</h2>
+    <ul>
+      <li>Sign-in opens supabase.com in a private window. Sign in there, pick your organization, and tap Authorize.</li>
+      <li>If you revoked SupaPulse in Supabase, sign in again from Settings → Reconnect Supabase.</li>
+    </ul>
+
+    <h2>Delete your account</h2>
+    <p>In the app: Settings → Delete account. This removes your SupaPulse account, alerts, history, and push tokens from our server and clears the device. Your Supabase projects are never touched. You can also email us to request deletion.</p>
+
+    <h2>Revoke access</h2>
+    <p>In the Supabase dashboard, open your organization settings → OAuth Apps → Authorized apps, and remove SupaPulse.</p>
+  </main>
+  <footer>
+    <p>© 2026 SupaPulse · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="./">Home</a></p>
+    <p class="fine">SupaPulse is not affiliated with Supabase Inc. This site uses no cookies.</p>
+  </footer>
+</body>
+</html>
